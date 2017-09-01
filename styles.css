@@ -1,0 +1,144 @@
+.main {
+	width:1024px;
+	margin: 0px auto;
+
+	position:relative;
+ }
+
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 250px;
+	height: 250px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+	background-color:#0B2161;
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size:16px;
+	color:white;
+}
+.back a {
+	color:white;
+	text-decoration: none;
+}
+.back a:hover {
+  color: grey;
+}
+
+.back h3 {
+	margin:0 0 0 0;
+	padding:10px 0 0 15px;
+}
+
+.back p {
+	padding:0 15px 0 15px;
+	text-align:justify;
+}
+
+
+.news {
+	float:left;
+	border-style: solid;
+	border-width: 1px;
+	padding-left:100px;
+}
+
+.new {
+	float:left;
+	width:250px;
+	height:250px;
+	margin:10px 10px 10px 10px;
+
+}
+
+.topLinks {
+	float:left;
+	width:100%;
+	background-color:#F7BE81;
+	margin: 5px 0 5px 0;
+	}
+.defilant {
+	float:left;
+	width:100%;
+	background-color:#72471D;
+	margin: 5px 0 5px 0;
+}
+.banniere {
+	float:left;
+	width:100%;
+	background-color:#AB7A49;
+	margin: 5px 0 5px 0;
+}
+
+.menu {
+	float:left;
+	width:100%;
+	background-color:#F7B572;
+	margin: 5px 0 5px 0;
+}
+
+.liens {
+	float:left;
+	width:40%;
+	height:200px;
+	background-color:#FACEA2;
+	margin: 5px 0 5px 0;
+}
+
+.evenements {
+	float:left;
+	width:60%;
+	height:200px;
+	background-color:#A88A6C;
+	margin: 5px 0 5px 0;
+}
+
+.vietab {
+	float:left;
+	width:60%;
+	height:200px;
+	background-color:#A88A6C;
+	margin: 5px 0 5px 0;
+}
+
+.offres {
+	float:left;
+	width:40%;
+	height:200px;
+	background-color:#FACEA2;
+	margin: 5px 0 5px 0;
+}

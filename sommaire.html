@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+[(#REM) Cf.: http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+]<!--[if lt IE 7 ]> <html dir="#LANG_DIR" lang="#LANG" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" class="[(#LANG_DIR)][ (#LANG)] no-js ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <html dir="#LANG_DIR" lang="#LANG" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" class="[(#LANG_DIR)][ (#LANG)] no-js ie ie7"> <![endif]-->
+<!--[if IE 8 ]> <html dir="#LANG_DIR" lang="#LANG" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" class="[(#LANG_DIR)][ (#LANG)] no-js ie ie8"> <![endif]-->
+<!--[if IE 9 ]> <html dir="#LANG_DIR" lang="#LANG" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" class="[(#LANG_DIR)][ (#LANG)] no-js ie ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html dir="#LANG_DIR" lang="#LANG" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" class="[(#LANG_DIR)][ (#LANG)] no-js"> <!--<![endif]--><html>
+
+	<head>
+		<INCLURE{fond=inclure/inc-head}>
+	</head>
+
+	<body>
+		<div class="main">
+			<header>
+				<INCLURE{fond=inclure/inc-entete}>
+			</header>
+			<section>
+				<div class="news">
+					<BOUCLE_actualites(ARTICLES){!titre_mot=Hors Accueil}{par date}{inverse}{0,6}>
+						<div class="new">
+							<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+								<div class="flipper">
+									<div class="front">
+										[(#LOGO_ARTICLE|image_reduire{0,250}|image_recadre{250,0,center})]
+									</div>
+									<div class="back">
+										<H3>#TITRE</H3>
+										<p>[(#TEXTE*|couper{180, ... <a href="#URL_ARTICLE" title="Lire la suite">(Lire la suite)</a>})]</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</BOUCLE_actualites>
+				</div>
+			</section>
+
+			<section>
+				<div class="liens">
+					<div class="lien">
+						Liens rapides
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="evenements">
+					<div class="evenement">
+						Agenda
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="vietab">
+					Vie des établissements
+				</div>
+			</section>
+
+			<section>
+				<div class="offres">
+					<div class="offre">
+						Recrutement
+					</div>
+				</div>
+			</section>
+		
+			<footer>
+				<INCLURE{fond=inclure/inc-pied}>
+			</footer>
+
+		</div>
+	</body>
+
+</html>
